@@ -1,66 +1,299 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+🔧 TechFix - Phone Repair Shop Management System
+A full-featured web application for electronics repair shops to manage services, blogs, bookings, and customer communication with built-in SEO optimization for local Kenyan markets.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+🚀 Features
+Multi-Authentication System
+Admin Panel - Full system control via Filament admin interface
 
-## About Laravel
+Customer Dashboard - Users can manage bookings and profile
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Role-based access control (Admin / Customer)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Service Management
+Create, Read, Update, Delete repair services
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Upload service images
 
-## Learning Laravel
+Set pricing for different services
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Location-specific service pages (SEO optimized)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Blog Management
+Create and publish blog posts
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Rich text editor for content
 
-## Laravel Sponsors
+Featured images support
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Publish/unpublish with date scheduling
 
-### Premium Partners
+Booking System
+Users register/login to book services
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Book repair services with item details
 
-## Contributing
+Automatic notification system (3 channels):
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+📱 Telegram - Instant notifications to shop owner
 
-## Code of Conduct
+📧 Email - Detailed booking information
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+💬 WhatsApp - Click-to-chat link for direct communication
 
-## Security Vulnerabilities
+SEO Optimized
+Automatic slug generation for URLs
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Meta tags management
 
-## License
+Location-based service pages
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Sitemap generation ready
+
+Schema.org markup support
+
+🛠️ Tech Stack
+Backend
+Laravel 11 - PHP Framework
+
+MySQL - Database
+
+Filament v3 - Admin Panel
+
+Spatie Media Library - Image management
+
+Artesaos SEOTools - SEO optimization
+
+Frontend
+Tailwind CSS - Styling
+
+Alpine.js - Interactivity
+
+Breeze - Authentication scaffolding
+
+Vite - Asset bundling
+
+Features & Integrations
+Telegram Bot API - Instant notifications
+
+Laravel Mail - Email notifications (Gmail/SMTP)
+
+WhatsApp Click-to-Chat - Free communication
+
+📋 Prerequisites
+PHP >= 8.2
+
+Composer
+
+Node.js & NPM
+
+MySQL >= 5.7
+
+Git
+
+🔧 Installation
+1. Clone the repository
+bash
+git clone https://github.com/yourusername/techfix.git
+cd techfix
+2. Install dependencies
+bash
+composer install
+npm install
+3. Environment setup
+bash
+cp .env.example .env
+php artisan key:generate
+4. Configure database in .env
+env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=techfix
+DB_USERNAME=root
+DB_PASSWORD=
+5. Run migrations & seeders
+bash
+php artisan migrate
+php artisan db:seed --class=AdminUserSeeder
+6. Create Filament admin user
+bash
+php artisan make:filament-user
+Name: Admin TechFix
+
+Email: admin@techfix.com
+
+Password: your-password
+
+7. Link storage for images
+bash
+php artisan storage:link
+8. Install & build frontend assets
+bash
+npm run build
+9. Configure Telegram Bot (Optional)
+Create bot via @BotFather on Telegram
+
+Get bot token and chat ID
+
+Add to .env:
+
+env
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_OWNER_CHAT_IDS=your_chat_id
+10. Configure Email (Optional)
+env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-app-password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=noreply@techfix.com
+MAIL_FROM_NAME="${APP_NAME}"
+11. Start the application
+bash
+php artisan serve
+npm run dev
+🚦 Usage
+Default Admin Login
+URL: http://127.0.0.1:8000/login
+
+Email: admin@techfix.com
+
+Password: password123
+
+Admin Panel
+Access: http://127.0.0.1:8000/admin
+
+Manage services, blogs, and view bookings
+
+Customer Flow
+Register/Login on website
+
+Browse services
+
+Book a repair
+
+Receive confirmation via Telegram/Email
+
+Owner contacts customer via WhatsApp
+
+📁 Project Structure
+text
+techfix/
+├── app/
+│   ├── Filament/Resources/     # Admin CRUD resources
+│   ├── Http/
+│   │   ├── Controllers/         # Application controllers
+│   │   └── Middleware/          # Role & auth middleware
+│   ├── Models/                  # Eloquent models
+│   └── Services/                # Telegram & notification services
+├── database/
+│   ├── migrations/              # Database schema
+│   └── seeders/                 # Test data seeders
+├── resources/
+│   ├── views/                   # Blade templates
+│   │   ├── admin/               # Admin views
+│   │   ├── auth/                # Authentication views
+│   │   └── layouts/             # App layouts
+│   ├── css/                     # Stylesheets
+│   └── js/                      # JavaScript files
+└── routes/
+    ├── web.php                  # Web routes
+    └── auth.php                 # Authentication routes
+🔑 Key Features Explained
+Multi-Authentication
+Users have role column (admin/customer)
+
+Middleware checks role before allowing access
+
+Different dashboards for each role type
+
+SEO Strategy
+Location-based service URLs (e.g., /services/iphone-repair/nairobi)
+
+Automatic sitemap generation
+
+Meta tags for each service and blog
+
+Schema markup for local business
+
+Notification System
+Telegram: Real-time alerts to shop owner
+
+Email: Detailed booking confirmation
+
+WhatsApp: Click-to-chat link in emails
+
+🐛 Troubleshooting
+Images not displaying in Filament
+bash
+php artisan storage:link
+php artisan config:clear
+Login redirects to wrong dashboard
+Check user role in database:
+
+bash
+php artisan tinker
+$user = User::where('email', 'admin@techfix.com')->first();
+echo $user->role;  // Should output 'admin'
+Clear all caches
+bash
+php artisan optimize:clear
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+php artisan route:clear
+📦 Dependencies
+Composer (Backend)
+laravel/framework: ^11.0
+
+laravel/breeze
+
+filament/filament: ^3.2
+
+spatie/laravel-medialibrary: ^11.0
+
+artesaos/seotools
+
+guzzlehttp/guzzle
+
+NPM (Frontend)
+tailwindcss
+
+alpinejs
+
+sweetalert2
+
+flatpickr
+
+🤝 Contributing
+Fork the repository
+
+Create feature branch (git checkout -b feature/amazing-feature)
+
+Commit changes (git commit -m 'Add amazing feature')
+
+Push to branch (git push origin feature/amazing-feature)
+
+Open Pull Request
+
+📄 License
+This project is open-sourced software licensed under the MIT license.
+
+👨‍💻 Author
+Your Name - Your GitHub
+
+🙏 Acknowledgments
+Laravel Community
+
+Filament PHP
+
+Spatie Packages
+
+All open-source contributors
+
+📞 Support
+For support, email support@techfix.com or open an issue on GitHub.
+
+Built with ❤️ for Kenyan phone repair businesses
